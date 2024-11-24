@@ -82,8 +82,9 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
 
 ```mermaid
  flowchart TD
+%% Nodes
     A["Inicio"]
-    B["Imprimir: Ingrese el valor del número n:"]
+    B["Imprimir: Ingrese el valor de n:"]
     C["Leer n"]
     D{"n < 2"}
     E["Imprimir: No hay primos menores que 2."]
@@ -96,11 +97,15 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
     L["h := h + 1"]
     M{"Mientras: i <= n"}
     N{"Si primos[h] == True"}
-    O["Marcar primos[i] := False"]
-    P["Incrementar i := i + h"]
-    Q["Imprimir i (primo)"]
-    R["Fin"]
+    O["Declaramos: i := h * h"]
+    P["Marcar primos[i] := False"]
+    Q["Incrementar i := i + h"]
+    R["Imprimir: Los primos hasta n son:"]
+    S{"Si primos[i] == True"}
+    T["Imprimir i"]
+    U["Fin"]
 
+%% Edge connections between nodes
     A --> B --> C --> D
     D -- Sí --> E --> F
     D -- No --> G
@@ -109,6 +114,11 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
     K -- No --> L
     N -- Sí --> M
     N -- No --> L
-    M --> O --> P --> M
-    M -- No --> Q --> R
+    M --> O --> P --> Q --> M
+    M -- No --> R --> S
+    S -- Sí --> T
+    S -- No --> R
+    T --> R
+    L --> K
+
 ```

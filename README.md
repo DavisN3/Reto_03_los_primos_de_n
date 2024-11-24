@@ -81,7 +81,7 @@ fin para
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
 
 ```mermaid
- flowchart TD
+flowchart TD
 %% Nodes
     A["Inicio"]
     B["Imprimir: Ingrese el valor de n:"]
@@ -120,5 +120,4 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
     S -- No --> R
     T --> R
     L --> K
-
 ```

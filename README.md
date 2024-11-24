@@ -50,7 +50,7 @@ h := 2
 
 # Generamos nuestro ciclo while:
 mientras (h*h <= n) hacer:
- si primos (h) entonces
+ si (primos[h] == 1) entonces
    i:= h*h
    Mientras (i<=n) hacer
     primos [i] := 0
@@ -61,7 +61,7 @@ mientras (h*h <= n) hacer:
 fin mientras
 
 # Imprimimos nuestros primos:
-imprimir ("Los primos qué están en el intervalo 1 hasta n son:")
+imprimir ("Los primos qué están hasta el número n son:")
 para i := 2 hasta n hacer
    si (primo[i]  == 1) entonces
      imprimir (i)

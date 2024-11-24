@@ -76,7 +76,6 @@ para i := 2 hasta n hacer
 fin para
 
 [fin]
-
 ```
 ## Proceso en diagrama de flujo para tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:

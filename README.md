@@ -31,7 +31,7 @@ En este caso, por cuestiones de practicidad vamos a utilizar tanto en el diagram
 ## Proceso en pseudocódigo de tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en pseudocódigo quedando algo tal que así:
 
-```mermaid:
+```mermaid
 [Variables]
 n : entero
 h : entero

@@ -81,6 +81,7 @@ para i := 2 hasta n hacer
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
 
 ```mermaid
+ flowchart TD
     A["Inicio"]
     B["Imprimir: Ingrese el valor del número n:"]
     C["Leer n"]
@@ -94,12 +95,11 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
     K{"h * h <= n"}
     L["h := h + 1"]
     M{"Mientras: i <= n"}
-    N["Si primos[h] == True"]
-    O["Declaramos: i := h * h"]
-    P["Marcar primos[i] := False"]
-    Q["Incrementar i := i + h"]
-    R["Imprimir primos"]
-    S["Fin"]
+    N{"Si primos[h] == True"}
+    O["Marcar primos[i] := False"]
+    P["Incrementar i := i + h"]
+    Q["Imprimir i (primo)"]
+    R["Fin"]
 
     A --> B --> C --> D
     D -- Sí --> E --> F
@@ -109,8 +109,6 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
     K -- No --> L
     N -- Sí --> M
     N -- No --> L
-    M --> O --> P --> Q --> M
-    M -- No --> R --> S
-    L --> K
-
+    M --> O --> P --> M
+    M -- No --> Q --> R
 ```

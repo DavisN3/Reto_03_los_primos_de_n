@@ -31,7 +31,7 @@ En este caso, por cuestiones de practicidad vamos a utilizar tanto en el diagram
 ## Proceso en pseudocódigo de tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en pseudocódigo quedando algo tal que así:
 
-```mermaid
+```Pseudocódigo:
 [Variables]
 n : entero
 h : entero
@@ -80,7 +80,7 @@ para i := 2 hasta n hacer
 ## Proceso en diagrama de flujo para tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
 
-```Diagrama de flujo:
+```mermaid
     A["Inicio"]
     B["Imprimir: Ingrese el valor del número n:"]
     C["Leer n"]

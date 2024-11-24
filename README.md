@@ -1,4 +1,4 @@
-# Reto_03_los_primos_de_N
+# Reto_03_los_primos_de_n.
 El presente repositorio es una guía paso a paso sobre como obtener los primos hasta un número "n" dado, usando pseudocódigo y diagramas de flujo.
 
 ## Contenido:

@@ -29,7 +29,7 @@ En este caso, por cuestiones de practicidad vamos a utilizar tanto en el diagram
 
 
 ## Proceso en pseudocódigo de tener los primos hasta "n".
-Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso:
+Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en pseudocódigo quedando algo tal que así:
 
 ```Pseudocódigo:
 [Variables]
@@ -39,11 +39,18 @@ primos : arr de booleanos
 i : entero
 
 [Inicio]
-imprimir ("Ingrese el valor de n:")
+escribir ("Ingrese el valor de n:")
 leer (n)
 
+Si (n<2) entonces
+  escribir ("No hay primos menores que 2.")
+ salir
+fin si
+
 # Arreglo de primos:
-primos := arreglo de tamaño desde 2 hasta n (n+1) con todos los valores en 1 (True).
+primos := arreglo de tamaño (n+1) con todos los valores en 1 (True).
+primos [0] := 0
+primos [1] := 0
 
 #Comenzamos con el primer primo del intervalo:
 h := 2
@@ -61,7 +68,7 @@ mientras (h*h <= n) hacer:
 fin mientras
 
 # Imprimimos nuestros primos:
-imprimir ("Los primos qué están hasta el número n son:")
+escribir ("Los primos qué están hasta el número n son:")
 para i := 2 hasta n hacer
    si (primo[i]  == 1) entonces
      imprimir (i)
@@ -69,4 +76,41 @@ para i := 2 hasta n hacer
  fin para
 
 [fin]
+```
+## Proceso en diagrama de flujo para tener los primos hasta "n".
+Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
+
+```Diagrama de flujo:
+    A["Inicio"]
+    B["Imprimir: Ingrese el valor del número n:"]
+    C["Leer n"]
+    D{"n < 2"}
+    E["Imprimir: No hay primos menores que 2."]
+    F["Fin"]
+    G["Arreglo de primos con tamaño (n+1) con todos los valores en True"]
+    H["Declaramos: primos[0] := False"]
+    I["Declaramos: primos[1] := False"]
+    J["Declaramos: h := 2"]
+    K{"h * h <= n"}
+    L["h := h + 1"]
+    M{"Mientras: i <= n"}
+    N["Si primos[h] == True"]
+    O["Declaramos: i := h * h"]
+    P["Marcar primos[i] := False"]
+    Q["Incrementar i := i + h"]
+    R["Imprimir primos"]
+    S["Fin"]
+
+    A --> B --> C --> D
+    D -- Sí --> E --> F
+    D -- No --> G
+    G --> H --> I --> J --> K
+    K -- Sí --> N
+    K -- No --> L
+    N -- Sí --> M
+    N -- No --> L
+    M --> O --> P --> Q --> M
+    M -- No --> R --> S
+    L --> K
+
 ```

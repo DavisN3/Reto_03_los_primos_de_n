@@ -20,8 +20,8 @@ En este caso, por cuestiones de practicidad vamos a utilizar la Criba de Erastó
 2. Paso #2: Procesamiento de números:
  - Empezamos con el primer número primo, h=2.
  - Descartamos todos los múltiplos de h, iniciando desde h^2 hasta n.
-- Paso #3: Seguir al siguiente número:
+3. Paso #3: Seguir al siguiente número:
  - Incrementamos h al siguiente número que no haya sido descartado.
  - Repetimos el procedimiento del paso #2 hasta que h^2 sea mayor que n.
-- Paso #4: Recolectar los números no descartados:
+4.  Paso #4: Recolectar los números no descartados:
  - Los números no descartados en la lista, son nuestros números primos.

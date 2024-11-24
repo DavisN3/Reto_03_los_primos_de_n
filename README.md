@@ -15,9 +15,9 @@ La respuesta es sí, a lo largo de la historia se han desarrollado diferentes m�
 En este caso, por cuestiones de practicidad vamos a utilizar la Criba de Erastóstenes.
 
 ### Pasos a seguir:
-####Paso #1: Generar lista de números.
+1. Paso #1: Generar lista de números.
  - Hacemos una lista de los números desde 2 hasta nuestro número n; dado que en este rango ya se encuentran los primos que buscamos.
-- Paso #2: Procesamiento de números:
+2. Paso #2: Procesamiento de números:
  - Empezamos con el primer número primo, h=2.
  - Descartamos todos los múltiplos de h, iniciando desde h^2 hasta n.
 - Paso #3: Seguir al siguiente número:

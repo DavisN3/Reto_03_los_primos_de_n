@@ -80,43 +80,27 @@ fin para
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
 
 ```mermaid
-graph TD
-    A["Inicio"]
-    B["Imprimir: Ingrese el valor de n:"]
-    C["Leer n"]
-    D{"n < 2"}
-    E["Imprimir: No hay primos menores que 2."]
-    F["Fin"]
-    G["Arreglo de primos con tamaño (n+1) con todos los valores en True"]
-    H["Declaramos: primos[0] := False"]
-    I["Declaramos: primos[1] := False"]
-    J["Declaramos: h := 2"]
-    K{"h * h <= n"}
-    L["h := h + 1"]
-    M{"Mientras: i <= n"}
-    N{"Si primos[h] == True"}
-    O["Declaramos: i := h * h"]
-    P["Marcar primos[i] := False"]
-    Q["Incrementar i := i + h"]
-    R["Imprimir: Los primos hasta n son:"]
-    S{"Si primos[i] == True"}
-    T["Imprimir i"]
-    U["Fin"]
-
-    A --> B --> C --> D
-    D -- Sí --> E --> F
-    D -- No --> G
-    G --> H --> I --> J --> K
-    K -- Sí --> N
-    K -- No --> L
-    L --> K
-    N -- Sí --> M
-    N -- No --> L
-    M --> O --> P --> Q --> M
-    M -- No --> R --> S
-    S -- Sí --> T
-    S -- No --> U
-    T --> S
+flowchart TD
+    A[Inicio] --> B[Ingresar un número: n]
+    B --> C{n < 2?}
+    C -- Sí --> D[Escribir: "No hay números primos menores que 2"]
+    D --> E[Fin]
+    C -- No --> F[Inicializar lista de primos vacía]
+    F --> G[Para i desde 2 hasta n]
+    G --> H[Suponer es_primo = Verdadero]
+    H --> I[Para j desde 2 hasta raíz cuadrada de i]
+    I --> J{i % j == 0?}
+    J -- Sí --> K[es_primo = Falso]
+    K --> L[Salir del bucle interno]
+    J -- No --> M[Continuar con siguiente j]
+    M --> I
+    L --> N{es_primo == Verdadero?}
+    N -- Sí --> O[Agregar i a la lista de primos]
+    N -- No --> P[Continuar con siguiente i]
+    O --> P
+    P --> G
+    G --> Q[Escribir: Lista de primos]
+    Q --> E[Fin]
 
 ```
 # ¡Eso es todo!

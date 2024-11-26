@@ -67,7 +67,7 @@ para i desde 2 hasta n hacer
         fin si
     fin para
 
-#Si es primo, pues lo imprimimor.
+#Si es primo, pues lo imprimimos.
     si (es_primo) entonces
         escribir (i)
     fin si

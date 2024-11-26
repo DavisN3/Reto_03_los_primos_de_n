@@ -78,6 +78,7 @@ fin para
 ```
 ## Proceso en diagrama de flujo para tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
+
 ![descarga](https://github.com/user-attachments/assets/d4ba1064-d439-40e5-8d88-524f1b6e48c2)
 
 

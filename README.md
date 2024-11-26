@@ -78,29 +78,7 @@ fin para
 ```
 ## Proceso en diagrama de flujo para tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:
+![descarga](https://github.com/user-attachments/assets/d4ba1064-d439-40e5-8d88-524f1b6e48c2)
 
-```mermaid
-flowchart TD
-    A[Inicio] --> B[Ingresar un número: n]
-    B --> C{n < 2?}
-    C -- Sí --> D[Escribir: "No hay números primos menores que 2"]
-    D --> E[Fin]
-    C -- No --> F[Inicializar lista de primos vacía]
-    F --> G[Para i desde 2 hasta n]
-    G --> H[Suponer es_primo = Verdadero]
-    H --> I[Para j desde 2 hasta raíz cuadrada de i]
-    I --> J{i % j == 0?}
-    J -- Sí --> K[es_primo = Falso]
-    K --> L[Salir del bucle interno]
-    J -- No --> M[Continuar con siguiente j]
-    M --> I
-    L --> N{es_primo == Verdadero?}
-    N -- Sí --> O[Agregar i a la lista de primos]
-    N -- No --> P[Continuar con siguiente i]
-    O --> P
-    P --> G
-    G --> Q[Escribir: Lista de primos]
-    Q --> E[Fin]
 
-```
 # ¡Eso es todo!

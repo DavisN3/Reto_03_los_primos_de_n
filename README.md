@@ -34,48 +34,36 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
 ```Pseudocódigo:
 [Variables]
 n : entero
-h : entero
-primos : arreglo de booleanos
 i : entero
+j : entero
+es_primo : booleano
 
 [Inicio]
-escribir ("Ingrese el valor de n:")
+escribir ("Ingrese un número:")
 leer (n)
 
 Si (n < 2) entonces
-  escribir ("No hay primos menores que 2.")
-  salir
+    escribir ("No hay primos menores que 2.")
+    salir
 fin si
 
-# Arreglo de primos:
-primos := arreglo de tamaño (n+1) con todos los valores en 1 (True)
-primos[0] := 0
-primos[1] := 0
+escribir ("Los números primos hasta", n, "son:")
 
-# Comenzamos con el primer primo del intervalo:
-h := 2
-
-# Generamos nuestro ciclo while:
-mientras (h * h <= n) hacer:
-    si (primos[h] == 1) entonces
-        i := h * h
-        Mientras (i <= n) hacer
-            primos[i] := 0  # Marcar múltiplos de h como compuestos
-            i := i + h
-        fin mientras
-    fin si
-    h := h + 1
-fin mientras
-
-# Imprimimos nuestros primos:
-escribir ("Los primos hasta el número n son:")
-para i := 2 hasta n hacer
-    si (primos[i] == 1) entonces
-        imprimir (i)
+para i desde 2 hasta n hacer
+    es_primo := verdadero
+    para j desde 2 hasta raíz cuadrada de i hacer
+        si (i mod j == 0) entonces
+            es_primo := falso
+            salir para
+        fin si
+    fin para
+    si (es_primo) entonces
+        escribir (i)
     fin si
 fin para
 
-[fin]
+[Fin]
+
 ```
 ## Proceso en diagrama de flujo para tener los primos hasta "n".
 Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este paso en diaframa de flujo quedando algo tal que así:

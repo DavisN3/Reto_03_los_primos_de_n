@@ -33,30 +33,41 @@ Con base a los pasos para ejecutar la Criba de Erastóstenes realizaremos este p
 
 ```Pseudocódigo:
 [Variables]
-n : entero
-i : entero
-j : entero
-es_primo : booleano
+n : entero # Número ingresado por el usuario.
+i : entero # Número contador.
+j : entero # Posible divisor de nuestro contador.
+es_primo : booleano # Indicará si un número es primo o no.
 
 [Inicio]
+# Se inicia el límite.
 escribir ("Ingrese un número:")
 leer (n)
 
+# En cuyo caso que el número sea menor a dos no tiene primos.
 Si (n < 2) entonces
     escribir ("No hay primos menores que 2.")
     salir
 fin si
 
+# El mensaje indica el listado de los primos.
 escribir ("Los números primos hasta", n, "son:")
 
+# Evaluamos los números desde 2 hasta n.
 para i desde 2 hasta n hacer
+
+# Marcamos nuestro primer número de i como primo.
     es_primo := verdadero
+
+#Comprobamos si el número tiene divisores entre 2 y la raíz cuadrada.
     para j desde 2 hasta raíz cuadrada de i hacer
-        si (i mod j == 0) entonces
+        si (i % j == 0) entonces
+# Si hay divisor  (que se comprueba que tenga residuo 0 la división), no es primo.
             es_primo := falso
             salir para
         fin si
     fin para
+
+#Si es primo, pues lo imprimimor.
     si (es_primo) entonces
         escribir (i)
     fin si
